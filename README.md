@@ -9,7 +9,7 @@
 
 ## About app
 
-This is a Laravel Submissions API Demo. It saves a Submission entity asynchronously to database.
+This is a Laravel Submissions API Demo. It saves a Submission entity asynchronously to database.  
 Stack:
 - PHP 8.3
 - Laravel 11
