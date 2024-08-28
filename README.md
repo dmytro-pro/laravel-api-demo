@@ -7,6 +7,58 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About app
+
+This is a Laravel Submissions API Demo. It saves a Submission entity asynchronously to database.
+Stack:
+- PHP 8.3
+- Laravel 11
+- SQLite
+
+
+### Requirements for the minimal setup
+- PHP 8.3 cli
+
+### Setup
+```
+composer install
+php artisan migrate
+```
+
+### Unit tests
+```
+php vendor/bin/phpunit
+```
+
+### How to test on Local environment
+
+The most convenient way is to use separate terminal tabs for each command:
+```
+## Start built-in web server:
+php artisan serve
+
+## Processing jobs:
+php artisan queue:listen
+
+## Logs:
+tail -f storage/logs/laravel.log
+```
+
+After all the tabs are launched, add some job via `/submit` endpoint:
+
+```
+curl -i --location 'http://127.0.0.1:8000/submit' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "hello",
+    "email": "joe@example.com",
+    "message": "Test<> 4"
+}'
+```
+
+If successful, You should see the successful INFO log message. The saved data can be explored in `submission` table inside SQLite database, located at `database/database.sqlite`
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
