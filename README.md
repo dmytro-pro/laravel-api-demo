@@ -22,6 +22,8 @@ Stack:
 ### Setup
 ```
 composer install
+cp .env.example .env
+php artisan key:generate
 php artisan migrate
 ```
 
@@ -57,7 +59,7 @@ curl -i --location 'http://127.0.0.1:8000/submit' \
 }'
 ```
 
-If successful, You should see the successful INFO log message. The saved data can be explored in `submission` table inside SQLite database, located at `database/database.sqlite`
+If successful, You should see the successful INFO log message. The saved data can be explored in `submission` table inside SQLite database, located at `database/database.sqlite`.
 
 ## About Laravel
 
