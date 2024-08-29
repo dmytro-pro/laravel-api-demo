@@ -27,6 +27,15 @@ php artisan key:generate
 php artisan migrate
 ```
 
+### Setup - Ubuntu
+If You have Ubuntu, You need to install some required modules for the minimal setup
+```
+sudo apt install php8.3 php8.3-cli php8.3-{bz2,curl,mbstring,intl}
+sudo apt install php8.3-xml
+sudo apt install php8.3-sqlite3
+```
+Full guide for the installation can be found there: https://php.watch/articles/php-8.3-install-upgrade-on-debian-ubuntu
+
 ### Unit tests
 ```
 php vendor/bin/phpunit
